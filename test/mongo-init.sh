@@ -29,15 +29,14 @@ function checkInstallation() {
   declare -a program=("mongo" "mongod")
 
   for i in "${program[@]}"; do
-    declare result="$(which "${i}")"
-    if [[ -z "${result}" ]]; then
-      echo "Oops… Looks like ${$i} is not installed on this machine."
-      echo "run `$ brew install moongo` "
-      exit 1
-    else
-      # log to debug array
-      # echo "${program} is installed"
-      echo ""
+    declare current_program="${i}"
+    if ! type "${current_program}" > /dev/null 2>&1; then
+      echo "Oops… Looks like ${current_program} is not installed on this machine."
+      echo "run `$ brew install mongo`"
+    # else
+    #   # log to debug array
+    #   # echo "${program} is installed"
+    #   echo ""
     fi
   done
 }
