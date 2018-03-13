@@ -3,7 +3,7 @@
 # @author:      Brandon Crooks
 # @version:     v1.0
 # @description: Create and start a mongo database. Mongo-init will create a
-# default database if one does not exist in the current directory.
+# database if one does not exist in the current directory.
 # @version:     v1.0
 #
 
