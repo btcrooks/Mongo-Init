@@ -9,11 +9,6 @@
 
 declare MONGO_DIR="${PWD}/data/db"
 
-function createMongoDir() {
-  mkdir -p ${MONGO_DIR}
-  chmod u+x ${MONGO_DIR}
-}
-
 function checkInstallation() {
   # check if mongo is installed
   declare -a program=("mongo" "mongod")
@@ -29,6 +24,11 @@ function checkInstallation() {
       # echo "${program} is installed"
     fi
   done
+}
+
+function createMongoDir() {
+  mkdir -p ${MONGO_DIR}
+  chmod u+x ${MONGO_DIR}
 }
 
 function startMongoServer() {
